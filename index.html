@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Ventas POS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Pantalla de Ingreso -->
+  <div id="loginScreen" class="screen">
+    <div class="container">
+      <header>
+        <h1>Ingreso al Sistema de Ventas</h1>
+      </header>
+      <section class="login-form">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="username">Usuario</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit">Ingresar</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <!-- Pantalla Principal (Ventas) -->
+  <div id="mainScreen" class="screen" style="display: none;">
+    <div class="container">
+      <header>
+        <h1>Sistema de Registro de Ventas</h1>
+        <button id="logoutBtn">Cerrar Sesión</button>
+      </header>
+
+      <!-- Sección de Productos -->
+      <section class="product-list">
+        <h2>Productos Disponibles</h2>
+        <ul id="productList">
+          <!-- Los productos se cargarán dinámicamente -->
+        </ul>
+      </section>
+
+      <!-- Formulario de registro de venta -->
+      <section class="sale-form">
+        <h2>Registrar Venta</h2>
+        <form id="saleForm">
+          <div class="form-group">
+            <label for="product">Producto</label>
+            <select id="product" name="product" required>
+              <!-- Los productos disponibles se llenarán aquí -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Cantidad</label>
+            <input type="number" id="quantity" name="quantity" required>
+          </div>
+          <div class="form-group">
+            <label for="price">Precio Unitario</label>
+            <input type="number" id="price" name="price" required>
+          </div>
+          <div class="form-group">
+            <label for="paymentMethod">Método de Pago</label>
+            <select id="paymentMethod" name="paymentMethod" required>
+              <option value="efectivo">Efectivo</option>
+              <option value="tarjeta">Tarjeta</option>
+              <option value="transferencia">Transferencia</option>
+            </select>
+          </div>
+          <button type="submit">Registrar Venta</button>
+        </form>
+      </section>
+
+      <!-- Sección de ventas registradas -->
+      <section id="salesReport">
+        <h2>Ventas Registradas</h2>
+        <ul id="salesList">
+          <!-- Aquí se mostrarán las ventas registradas -->
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
